@@ -1,0 +1,364 @@
+body.v-modal-window-open {
+	overflow: hidden !important;
+}
+
+.valo.v-app, .valo.v-app-loading {
+	font-weight: 500 !important;
+}
+
+.valo .v-grid-cell {
+	padding-left: 0px !important;
+	padding-right: 0px !important;	
+}
+
+.year-search-layout {
+	background-color: aliceblue;
+}
+
+.v-caption-tab-navigation {
+	margin-bottom: 15px;
+}
+
+.v-caption-horizontal-radio-input {
+	margin-bottom: 10px !important;
+}
+
+.horizontal-radio-input.horizontal .v-radiobutton {
+	display: inline-block !important;
+	margin-right: 20px !important;
+}
+
+.horizontal-radio-input input {
+	margin-right: 5px !important;
+}
+
+.horizontal-radio-input label {
+	display: inline-block !important;
+	vertical-align: sub !important;
+	font-size: 12px !important;
+}
+
+.form-buttons {
+	margin-top: 20px !important;
+}
+
+.vk-field-optiongroup label {
+	display: inline-block !important;
+    vertical-align: sub !important;
+    margin-left: 10px !important;
+}
+
+.v-caption-vk-field-optiongroup {
+	font-size: 16px !important;
+	margin-top: 5px !important;
+	margin-bottom: 10px !important;
+	font-weight: 700 !important;
+}
+
+.modal-layout {
+	padding-left: 10px !important;	
+}
+
+.choose-all-selection {
+	font-size: 18px !important;
+	font-weight: 700 !important;
+}
+
+.choose-all-selection label {
+	display: inline-block !important;
+    vertical-align: sub !important;
+    margin-left: 10px !important;
+}
+
+.v-select-error select, .v-textfield-error, .v-filterselect-error {
+	border-color: red !important;
+}
+
+.accept-modify {
+	float: right !important;
+}
+
+.info-layout {
+	padding-left: 50px !important;
+	max-width: 700px;
+}
+
+.v-switch {
+	text-align: center !important
+}
+
+.tupa-grid .grid-cell-upper {
+	padding-top: 4px !important;
+}
+
+.tupa-grid .grid-cell-wrap {
+	white-space: normal !important;
+}
+
+.tupa-grid .grid-cell-text {
+	font-size: 13px !important;
+	line-height: 1.5 !important;
+} 
+
+.tupa-grid .grid-cell-center, .v-grid .v-grid-header .v-grid-cell, .v-grid .v-grid-header .v-grid-cell .v-label {
+	text-align: center !important;
+}
+
+.tupa-grid .v-grid-header .v-grid-column-header-content {
+	font-weight: bold !important;
+	background-color: beige !important;
+	background-image: none !important;
+	white-space: normal !important;
+    line-height: 1.4 !important;
+    height: 40px !important;
+}
+
+.tupa-grid .v-grid-row:hover .v-grid-cell {
+    background-color: grey;
+}
+
+.tupa-grid .grid-cell-service-types span:nth-child(1) {
+	margin-right: 2px !important;
+}
+
+.tupa-grid .grid-cell-service-types span:nth-child(2) {
+	margin-right: 2px !important;
+	margin-left: 2px !important;
+}
+
+.tupa-grid .grid-cell-service-types span:nth-child(3) {
+	margin-left: 2px !important;
+}
+
+.tupa-grid .grid-cell-openness {
+	color: green !important;
+}
+
+.tupa-grid .v-icon img {
+	vertical-align: top !important;
+}
+
+.v-icon:not(.ext) {
+	font-size: 1.5em !important;
+}
+
+.tupa-grid .v-grid-body .v-grid-cell {
+	height: 75px !important;
+}
+
+.infra-grid .grid-cell-middle {
+	padding-top: 12px !important;
+}
+
+.service-grid .grid-cell-middle {
+	padding-top: 18px !important;
+}
+
+.service-grid .grid-cell-openness {
+	font-size: 1.1em !important;
+	line-height: 1.5 !important;
+}
+
+.blurred-text {
+    color: #888 !important;
+}
+
+.v-caption-blurred-text {
+    color: #C0C0C0 !important;
+}
+
+.tupa-details .openness-rating {
+	font-size: 30px !important;
+	color: green !important;
+}
+
+.v-caption-openness-rating {
+	color: green !important;
+}
+
+.tupa-details .x-large-font {
+	font-size: 20px !important;
+	font-weight: 700 !important;
+}
+
+.tupa-details .header {
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	margin-top: 15px !important;
+	margin-bottom: 15px !important;
+}
+
+.tupa-details .no-bottom-margin-header {
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	margin-top: 10px !important;
+}
+
+.tupa-details .link {
+	height: 25px !important;
+}
+
+.tupa-details .licence-link a {
+	vertical-align: top !important;
+}
+
+.tupa-details .v-window-header {
+	color: #474747 !important;
+	font-size: 22px !important;
+	font-weight: 700 !important;
+}
+
+.tupa-details.maximized {
+	position: fixed !important;
+}
+
+.tupa-details .image-row {
+	height: 100% !important;
+}
+
+.infra-details .openness-rating {
+	margin-left: 40% !important;
+}
+
+.infra-details .keywords .keyword {
+	padding: 4px;
+    background-color: #6666FF;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0000EE;
+    color: white;
+    border-radius: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.infra-details .service .service-link {
+	margin-bottom: 10px;
+} 
+
+.infra-details .service .service-description {
+	margin-top: 10px;
+	padding-left: 15px;
+} 
+
+.service-details .licence-link-layout {
+	margin-top: 15px !important;
+}
+
+.service-details .nimi {
+	padding: 0px !important;
+	text-decoration: none !important;
+}
+
+.service-details .openness-rating {
+	margin-left: 25% !important;
+}
+
+.small-margin-left-right {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.slider-center {
+	position: absolute !important;
+	left: 30% !important;
+	height: 110px !important;
+	width: 0px !important;
+}
+
+.valo .v-window-top-toolbar .v-label, .valo .v-window-bottom-toolbar .v-label {
+	line-height: 20px !important
+}
+
+.v-app.valo {
+	background-color: white !important;
+}
+
+.valo .v-button-link:active {
+    opacity: 0.0 !important;
+}
+
+#okm-logo .v-icon {
+	width: 120px !important;
+}
+
+#academy-logo {
+	margin-top: -20px !important;
+	margin-right: 20px !important;
+}
+
+#academy-logo .v-icon {
+	width: 250px !important;
+}
+
+.borderless {
+    border: none;
+    background: transparent no-repeat;
+    outline: none;
+    text-decoration: underline !important;
+    color: blue !important;
+    font-weight: none !important;
+    vertical-align: top !important;
+}
+
+.borderless span {
+    font-size: 16px !important;
+}
+
+.v-nativebutton-borderless .v-nativebutton-caption {
+    font-size: 14px;
+}
+
+#tupa-header-title {
+	color: #6CD0F9 !important;
+    font-size: 2.2em !important;
+    font-weight: 600 !important;
+}
+
+.tupa-glossary-table, .tupa-glossary-table .tupa-th, .tupa-glossary-table .tupa-td {
+    border-color: #ddd !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    min-width: 0.6em !important;
+    padding: 5px 7px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+}
+
+.tupa-glossary-table .tupa-background {
+	background: #f0f0f0;
+}
+
+#toggle-buttons .v-button-toggle-button-down {
+    background-image: none !important;
+    background-color:#197de1 !important;
+    border-width: 0px;
+    box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #0264C7 !important;
+}
+
+#toggle-buttons .toggle-button-down:focus:after, #toggle-buttons .v-button:focus:after {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+#toggle-buttons .v-button-toggle-button-down .v-button-wrap {
+  color: #c8dbed !important;
+}
+
+.icon-reference-link {
+	font-size: 10px !important;
+}
+
+.v-slot-openness-filter-header {
+	margin-top: -3px !important;
+}
+
+.leaflet-popup-content {
+	width: 600px !important;
+}
+
+.details-description {
+	padding-left: 15px;
+}

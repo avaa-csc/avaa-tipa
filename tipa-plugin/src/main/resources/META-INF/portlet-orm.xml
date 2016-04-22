@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.AvainsanaModelImpl">
+		<attributes>
+			<id name="avainsana_id" />
+			<basic name="avainsana" />
+			<basic name="keyword" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.InfraModelImpl">
+		<attributes>
+			<id name="infra_id" />
+			<basic name="ISNI" />
+			<basic name="aktiivinen" />
+			<basic name="valmistelu_aloitusvuosi" />
+			<basic name="rakennus_aloitusvuosi" />
+			<basic name="toiminta_aloitusvuosi" />
+			<basic name="toiminta_lopetusvuosi" />
+			<basic name="nimi" />
+			<basic name="name" />
+			<basic name="lyhenne" />
+			<basic name="acronym" />
+			<basic name="edellinen_infra" />
+			<basic name="kuvaus" />
+			<basic name="description" />
+			<basic name="logo_url" />
+			<basic name="image_url" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.Infra_AvainsanatModelImpl">
+		<id-class class="fi.csc.avaa.tupa.db.service.persistence.Infra_AvainsanatPK" />
+		<attributes>
+			<id name="infra_id" />
+			<id name="avainsana_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.Infra_PalvelutModelImpl">
+		<id-class class="fi.csc.avaa.tupa.db.service.persistence.Infra_PalvelutPK" />
+		<attributes>
+			<id name="infra_id" />
+			<id name="palvelu_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.Infra_VastuuorganisaatiotModelImpl">
+		<id-class class="fi.csc.avaa.tupa.db.service.persistence.Infra_VastuuorganisaatiotPK" />
+		<attributes>
+			<id name="infra_id" />
+			<id name="organisaatio_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.Infra_YhteystiedotModelImpl">
+		<id-class class="fi.csc.avaa.tupa.db.service.persistence.Infra_YhteystiedotPK" />
+		<attributes>
+			<id name="infra_id" />
+			<id name="yhteystieto_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.KayttoehtoModelImpl">
+		<attributes>
+			<id name="infra_id" />
+			<basic name="saavutettavuus" />
+			<basic name="anonymiteetti" />
+			<basic name="maksullisuus" />
+			<basic name="tulosten_julkaisuvelvoite" />
+			<basic name="tuotoksien_julkaisuvelvoite" />
+			<basic name="osaamisen_avoimuus" />
+			<basic name="seurantatyokalut" />
+			<basic name="tulosten_lisensointi" />
+			<basic name="URLfi" />
+			<basic name="URLen" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.OrganisaatioModelImpl">
+		<attributes>
+			<id name="organisaatio_id" />
+			<basic name="nimi" />
+			<basic name="name" />
+			<basic name="maa" />
+			<basic name="ISNI" />
+			<basic name="crmid" />
+			<basic name="emo_organisaatio" />
+			<basic name="kv_isanta" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.PalveluModelImpl">
+		<attributes>
+			<id name="palvelu_id" />
+			<basic name="nimi" />
+			<basic name="name" />
+			<basic name="kuvaus" />
+			<basic name="description" />
+			<basic name="URLen" />
+			<basic name="URLfi" />
+			<basic name="paikkatyyppi" />
+			<basic name="katuosoite" />
+			<basic name="kaupunki" />
+			<basic name="lat" />
+			<basic name="lon" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.Palvelu_PalvelutyypitModelImpl">
+		<id-class class="fi.csc.avaa.tupa.db.service.persistence.Palvelu_PalvelutyypitPK" />
+		<attributes>
+			<id name="palvelu_id" />
+			<id name="palvelutyyppi_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.PalvelutyyppiModelImpl">
+		<attributes>
+			<id name="palvelutyyppi_id" />
+			<basic name="tyyppi" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.SeliteModelImpl">
+		<attributes>
+			<id name="selite_id" />
+			<basic name="nimi" />
+			<basic name="name" />
+			<basic name="kuvaus" />
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="fi.csc.avaa.tupa.db.model.impl.YhteystietoModelImpl">
+		<attributes>
+			<id name="yhteystieto_id" />
+			<basic name="sahkoposti" />
+			<basic name="affiliaatio" />
+			<basic name="puhelin" />
+			<basic name="titteli" />
+			<basic name="etunimi" />
+			<basic name="sukunimi" />
+			<basic name="URL" />
+			<basic name="kuvaus" />
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.AvainsanaImpl" name="Avainsana">
+		<table name="avainsana" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.InfraImpl" name="Infra">
+		<table name="infra" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.Infra_AvainsanatImpl" name="Infra_Avainsanat">
+		<table name="infra_avainsanat" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.Infra_PalvelutImpl" name="Infra_Palvelut">
+		<table name="infra_palvelut" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.Infra_VastuuorganisaatiotImpl" name="Infra_Vastuuorganisaatiot">
+		<table name="infra_vastuuorganisaatiot" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.Infra_YhteystiedotImpl" name="Infra_Yhteystiedot">
+		<table name="infra_yhteystiedot" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.KayttoehtoImpl" name="Kayttoehto">
+		<table name="kayttoehto" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.OrganisaatioImpl" name="Organisaatio">
+		<table name="organisaatio" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.PalveluImpl" name="Palvelu">
+		<table name="palvelu" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.Palvelu_PalvelutyypitImpl" name="Palvelu_Palvelutyypit">
+		<table name="palvelu_palvelutyypit" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.PalvelutyyppiImpl" name="Palvelutyyppi">
+		<table name="palvelutyyppi" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.SeliteImpl" name="Selite">
+		<table name="selite" />
+		<attributes />
+	</entity>
+	<entity class="fi.csc.avaa.tupa.db.model.impl.YhteystietoImpl" name="Yhteystieto">
+		<table name="yhteystieto" />
+		<attributes />
+	</entity>
+</entity-mappings>
