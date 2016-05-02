@@ -10,7 +10,7 @@ import fi.csc.avaa.tupa.model.ExtPalvelu;
 public class ServiceResultControlRow extends ResultControlRow<ExtPalvelu> {
 
 	public ServiceResultControlRow(Translator translator) {
-		super(translator, false, false, false);
+		super(translator, null, null, false);
 	}
 
 	private static final long serialVersionUID = 1L;

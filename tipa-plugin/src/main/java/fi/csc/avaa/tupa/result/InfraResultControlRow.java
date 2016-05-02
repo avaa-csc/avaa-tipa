@@ -10,7 +10,7 @@ import fi.csc.avaa.tupa.model.ExtInfra;
 public class InfraResultControlRow extends ResultControlRow<ExtInfra> {
 
 	public InfraResultControlRow(Translator translator) {
-		super(translator, false, false, false);
+		super(translator, null, null, false);
 	}
 
 	private static final long serialVersionUID = 1L;
