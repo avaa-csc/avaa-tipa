@@ -1,0 +1,3 @@
+[submodule "avaa-common"]
+	path = avaa-common
+	url = https://github.com/avaa-csc/avaa-common

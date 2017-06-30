@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+branches:
+  only:
+  - 554-729-dev-branch-apis
+install:
+- git clone git@github.com:CSCfi/avaa-tools.git
+- mvn install -f avaa-tools/
+notifications:
+  flowdock:
+    secure: eT2TrfXBAER2ChUzkSzfVgcejJD45xNu+PeGL9QNW6+SMnAOw8RLwqzZ2ocXkn1a4otka3IdjbkOHCzDS3J/wV6eUuXvS9aVDdlO+dYTnd80gs0Prc5G4q+LOj7FDZWiiBygxiY0JhqJeb8DrZKgpLLeJ51vGnhwd2uPgPt+9lUBvV3ALM3syyy+U6uGaWwO9xTJSNbf4gehm31i6TtZssAd4WTOAIImB6qyrMxC5x1no/9eSfWeKCH4GW+EWeHtub+qu821g34Ew4L5c/0G3aHK1W84Uyk/p39v+hYd+PS4wQEgPkEmXBddK8vbE11T0XrvXqdtqBOXRVc+fBknUZFTh/yEtodIGQKZzMGHWYWs/XK0b6e3UwhzGsmHguJ0cWf7rL6yhs0xM49zT6TRb1LsETdvfihGC2Wi10IGScI+EOIK/iVIZr0LyOFPrrifxUXgXBz35GoyPTpip52ZUvIowTCug5/2UE1zKg7sX/WLPj5S5vMGzHixrdfUz838/jrbeW7iDaTMSWG4Q2grakathjEjBqrFBDe8DzAZoqGPzp+fEAnuFogVqB0QoaecHEFLS2TBmQf77LQq74r+5xYQBQdJ02H2BpM/J/d9lZ5TruGU5xz71Sifj56V0pi346OT/8vty907vcmWuPYTTxgD1+urf/pasnANiDQsnZo=
+  on_success: never
+  on_failure: always

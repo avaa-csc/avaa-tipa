@@ -1,0 +1,1 @@
+Deploy to Liferay by running "mvn clean package liferay:deploy -Pliferay".

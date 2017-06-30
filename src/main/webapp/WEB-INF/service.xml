@@ -1,0 +1,269 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+		"http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="fi.csc.avaa.tupa.db">
+	<author>CSC</author>
+	<namespace>tupa</namespace>
+
+	<entity name="Infra" table="infra" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="ISNI" type="String"></column>
+		<column name="aktiivinen" type="boolean"></column>
+		<column name="valmistelu_aloitusvuosi" type="int"></column>
+		<column name="rakennus_aloitusvuosi" type="int"></column>
+		<column name="toiminta_aloitusvuosi" type="int"></column>
+		<column name="toiminta_lopetusvuosi" type="int"></column>
+		<column name="nimi" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="lyhenne" type="String"></column>
+		<column name="acronym" type="String"></column>
+		<column name="edellinen_infra" type="int"></column>
+		<column name="kuvaus" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="logo_url" type="String"></column>
+		<column name="image_url" type="String"></column>
+		<column name="api_date" type="Date"></column>
+
+		<finder name="previousId" return-type="Collection">
+			<finder-column name="edellinen_infra"/>
+		</finder>
+		<finder name="apiDate" return-type="Collection">
+			<finder-column name="api_date"/>
+		</finder>
+	</entity>
+
+	<entity name="Infra_Identifier" table="infra_identifier"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="identifier_type" type="int" primary="true"></column>
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="identifier_value" type="String" primary="true"></column>
+		
+		<finder name="infraId" return-type="Collection">
+			<finder-column name="infra_id"/>
+		</finder>
+		<finder name="identifierType" return-type="Collection">
+			<finder-column name="identifier_type"/>
+		</finder>
+		<finder name="identifierValue" return-type="Collection">
+			<finder-column name="identifier_value"/>
+		</finder>
+	</entity>
+
+	<entity name="Identifier" table="identifier"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="identifier_type" type="int" primary="true"></column>
+		<column name="identifier_name" type="String"></column>
+		<column name="identifier_description_translation_key" type="String"></column>
+		<column name="resolution_url" type="String"></column>
+		<column name="definition_url" type="String"></column>
+
+		<finder name="identifierName" return-type="Collection">
+			<finder-column name="identifier_name"/>
+		</finder>
+	</entity>
+
+	<entity name="Kayttoehto" table="kayttoehto" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="saavutettavuus" type="int"></column>
+		<column name="anonymiteetti" type="int"></column>
+		<column name="maksullisuus" type="int"></column>
+		<column name="tulosten_julkaisuvelvoite" type="int"></column>
+		<column name="tuotoksien_julkaisuvelvoite" type="int"></column>
+		<column name="osaamisen_avoimuus" type="int"></column>
+		<column name="seurantatyokalut" type="int"></column>
+		<column name="tulosten_lisensointi" type="int"></column>
+		<column name="URLfi" type="String"></column>
+		<column name="URLen" type="String"></column>
+	</entity>
+
+	<entity name="Infra_Yhteystiedot" table="infra_yhteystiedot"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="yhteystieto_id" type="int" primary="true"></column>
+	</entity>
+
+	<entity name="Yhteystieto" table="yhteystieto" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="yhteystieto_id" type="int" primary="true"></column>
+		<column name="sahkoposti" type="String"></column>
+		<column name="affiliaatio" type="int"></column>
+		<column name="puhelin" type="String"></column>
+		<column name="titteli" type="String"></column>
+		<column name="etunimi" type="String"></column>
+		<column name="sukunimi" type="String"></column>
+		<column name="URL" type="String"></column>
+		<column name="kuvaus" type="String"></column>
+		<column name="description" type="String"></column>
+	</entity>
+
+	<entity name="Infra_Vastuuorganisaatiot" table="infra_vastuuorganisaatiot"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="organisaatio_id" type="int" primary="true"></column>
+
+		<finder name="infraId" return-type="Collection">
+			<finder-column name="infra_id"/>
+		</finder>		
+		<finder name="organisationId" return-type="Collection">
+			<finder-column name="organisaatio_id"/>
+		</finder>
+	</entity>
+
+	<entity name="Organisaatio" table="organisaatio" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="organisaatio_id" type="int" primary="true"></column>
+		<column name="nimi" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="maa" type="String"></column>
+		<column name="ISNI" type="String"></column>
+		<column name="crmid" type="String"></column>
+		<column name="emo_organisaatio" type="int"></column>
+		<column name="kv_isanta" type="boolean"></column>
+
+		<finder name="isni" return-type="Collection">
+			<finder-column name="ISNI"/>
+		</finder>
+		<finder name="country" return-type="Collection">
+			<finder-column name="maa"/>
+		</finder>
+	</entity>
+
+	<entity name="Infra_Avainsanat" table="infra_avainsanat"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="avainsana_id" type="int" primary="true"></column>
+	</entity>
+
+	<entity name="Avainsana" table="avainsana" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="avainsana_id" type="int" primary="true"></column>
+		<column name="avainsana" type="String"></column>
+		<column name="keyword" type="String"></column>
+	</entity>
+
+	<entity name="Infra_Palvelut" table="infra_palvelut"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="infra_id" type="int" primary="true"></column>
+		<column name="palvelu_id" type="int" primary="true"></column>
+	</entity>
+
+	<entity name="Palvelu" table="palvelu" local-service="true"
+			remote-service="false" data-source="tupa" session-factory="tupaSessionFactory">
+		<column name="palvelu_id" type="int" primary="true"></column>
+		<column name="nimi" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="kuvaus" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="URLen" type="String"></column>
+		<column name="URLfi" type="String"></column>
+		<column name="paikkatyyppi" type="int"></column>
+		<column name="katuosoite" type="String"></column>
+		<column name="kaupunki" type="String"></column>
+		<column name="lat" type="double"></column>
+		<column name="lon" type="double"></column>
+
+		<finder name="locationLatitude" return-type="Collection">
+			<finder-column name="lat"/>
+		</finder>
+		<finder name="locationLongitude" return-type="Collection">
+			<finder-column name="lon"/>
+		</finder>
+		<finder name="locationTypeId" return-type="Collection">
+			<finder-column name="paikkatyyppi"/>
+		</finder>
+	</entity>
+
+	<entity name="Palvelu_Palvelutyypit" table="palvelu_palvelutyypit"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="palvelu_id" type="int" primary="true"></column>
+		<column name="palvelutyyppi_id" type="int" primary="true"></column>
+	</entity>
+
+	<entity name="Palvelutyyppi" table="palvelutyyppi"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="palvelutyyppi_id" type="int" primary="true"></column>
+		<column name="tyyppi" type="int"></column>
+
+		<finder name="definitionId" return-type="Collection">
+			<finder-column name="tyyppi"/>
+		</finder>
+	</entity>
+
+	<entity name="Selite" table="selite"
+			local-service="true" remote-service="false" data-source="tupa"
+			session-factory="tupaSessionFactory">
+		<column name="selite_id" type="int" primary="true"></column>
+		<column name="nimi" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="kuvaus" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="classificator" type="String"></column>
+	</entity>
+
+	<entity name="TpInfrastructure" local-service="true" remote-service="true">
+		<column name="id" type="int" primary="true"></column>
+		<column name="urn" type="String"></column>
+		<column name="name_EN" type="String"></column>
+		<column name="name_FI" type="String"></column>
+		<column name="acronym_EN" type="String"></column>
+		<column name="acronym_FI" type="String"></column>
+		<column name="description_EN" type="String"></column>
+		<column name="description_FI" type="String"></column>
+		<column name="active" type="boolean"></column>
+		<column name="preparationsStarted" type="int"></column>
+		<column name="buildingStarted" type="int"></column>
+		<column name="operationsStarted" type="int"></column>
+		<column name="operationsFinished" type="int"></column>
+		<column name="formerIds" type="String"></column>
+		<column name="formerUrns" type="String"></column>
+	</entity>
+
+	<entity name="TpServize" local-service="true" remote-service="true">
+		<column name="id" type="int" primary="true"></column>
+		<column name="name_EN" type="String"></column>
+		<column name="name_FI" type="String"></column>
+		<column name="description_EN" type="String"></column>
+		<column name="description_FI" type="String"></column>
+		<column name="url" type="String"></column>
+		<column name="address" type="String"></column>
+		<column name="city" type="String"></column>
+		<column name="lat" type="double"></column>
+		<column name="lon" type="double"></column>
+	</entity>
+
+	<entity name="TpOrganisation" local-service="true" remote-service="true">
+		<column name="id" type="int" primary="true"></column>
+		<column name="name_EN" type="String"></column>
+		<column name="name_FI" type="String"></column>
+		<column name="isni" type="String"></column>
+		<column name="motherOrganisationsIds" type="int"></column>
+		<column name="country" type="String"></column>
+	</entity>
+
+	<entity name="TpContact" local-service="true" remote-service="true">
+		<column name="id" type="int" primary="true"></column>
+		<column name="email" type="String"></column>
+		<column name="phone" type="String"></column>
+		<column name="title" type="String"></column>
+		<column name="firstName" type="String"></column>
+		<column name="lastName" type="String"></column>
+		<column name="url" type="String"></column>
+		<column name="description_EN" type="String"></column>
+		<column name="description_FI" type="String"></column>
+	</entity>
+	
+	<entity name="TpAPI" local-service="true" remote-service="true">
+		<column name="methodsDescription" type="String" primary="true"></column>
+	</entity>
+
+</service-builder>

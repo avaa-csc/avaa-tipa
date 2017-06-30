@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="fi.csc.avaa.tupa.db.model.Avainsana" />
+	<import class="fi.csc.avaa.tupa.db.model.Identifier" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra_Avainsanat" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra_Identifier" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra_Palvelut" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra_Vastuuorganisaatiot" />
+	<import class="fi.csc.avaa.tupa.db.model.Infra_Yhteystiedot" />
+	<import class="fi.csc.avaa.tupa.db.model.Kayttoehto" />
+	<import class="fi.csc.avaa.tupa.db.model.Organisaatio" />
+	<import class="fi.csc.avaa.tupa.db.model.Palvelu" />
+	<import class="fi.csc.avaa.tupa.db.model.Palvelu_Palvelutyypit" />
+	<import class="fi.csc.avaa.tupa.db.model.Palvelutyyppi" />
+	<import class="fi.csc.avaa.tupa.db.model.Selite" />
+	<import class="fi.csc.avaa.tupa.db.model.TpAPI" />
+	<import class="fi.csc.avaa.tupa.db.model.TpContact" />
+	<import class="fi.csc.avaa.tupa.db.model.TpInfrastructure" />
+	<import class="fi.csc.avaa.tupa.db.model.TpOrganisation" />
+	<import class="fi.csc.avaa.tupa.db.model.TpServize" />
+	<import class="fi.csc.avaa.tupa.db.model.Yhteystieto" />
+	<class name="fi.csc.avaa.tupa.db.model.impl.AvainsanaImpl" table="avainsana">
+		<cache usage="read-write" />
+		<id name="avainsana_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="avainsana" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="keyword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.IdentifierImpl" table="identifier">
+		<cache usage="read-write" />
+		<id name="identifier_type" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="identifier_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="identifier_description_translation_key" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="resolution_url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="definition_url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.InfraImpl" table="infra">
+		<cache usage="read-write" />
+		<id name="infra_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ISNI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="aktiivinen" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="valmistelu_aloitusvuosi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="rakennus_aloitusvuosi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="toiminta_aloitusvuosi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="toiminta_lopetusvuosi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="nimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lyhenne" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="acronym" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="edellinen_infra" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="kuvaus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="logo_url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="image_url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="api_date" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Infra_AvainsanatImpl" table="infra_avainsanat">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Infra_AvainsanatPK">
+			<key-property name="infra_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="avainsana_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Infra_IdentifierImpl" table="infra_identifier">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Infra_IdentifierPK">
+			<key-property name="identifier_type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="infra_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="identifier_value" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Infra_PalvelutImpl" table="infra_palvelut">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Infra_PalvelutPK">
+			<key-property name="infra_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="palvelu_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Infra_VastuuorganisaatiotImpl" table="infra_vastuuorganisaatiot">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Infra_VastuuorganisaatiotPK">
+			<key-property name="infra_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="organisaatio_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Infra_YhteystiedotImpl" table="infra_yhteystiedot">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Infra_YhteystiedotPK">
+			<key-property name="infra_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="yhteystieto_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.KayttoehtoImpl" table="kayttoehto">
+		<cache usage="read-write" />
+		<id name="infra_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="saavutettavuus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="anonymiteetti" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="maksullisuus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tulosten_julkaisuvelvoite" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tuotoksien_julkaisuvelvoite" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="osaamisen_avoimuus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="seurantatyokalut" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tulosten_lisensointi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="URLfi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="URLen" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.OrganisaatioImpl" table="organisaatio">
+		<cache usage="read-write" />
+		<id name="organisaatio_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="nimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="maa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ISNI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="crmid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="emo_organisaatio" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="kv_isanta" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.PalveluImpl" table="palvelu">
+		<cache usage="read-write" />
+		<id name="palvelu_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="nimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kuvaus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="URLen" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="URLfi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="paikkatyyppi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="katuosoite" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kaupunki" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="lon" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.Palvelu_PalvelutyypitImpl" table="palvelu_palvelutyypit">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="fi.csc.avaa.tupa.db.service.persistence.Palvelu_PalvelutyypitPK">
+			<key-property name="palvelu_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="palvelutyyppi_id" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.PalvelutyyppiImpl" table="palvelutyyppi">
+		<cache usage="read-write" />
+		<id name="palvelutyyppi_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="tyyppi" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.SeliteImpl" table="selite">
+		<cache usage="read-write" />
+		<id name="selite_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="nimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kuvaus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="classificator" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.TpAPIImpl" table="tupa_TpAPI">
+		<cache usage="read-write" />
+		<id name="methodsDescription" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.TpContactImpl" table="tupa_TpContact">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.TpInfrastructureImpl" table="tupa_TpInfrastructure">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="urn" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="acronym_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="acronym_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="active_" />
+		<property name="preparationsStarted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="buildingStarted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="operationsStarted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="operationsFinished" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="formerIds" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="formerUrns" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.TpOrganisationImpl" table="tupa_TpOrganisation">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="name_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isni" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="motherOrganisationsIds" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="country" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.TpServizeImpl" table="tupa_TpServize">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="name_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_EN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description_FI" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="lon" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="fi.csc.avaa.tupa.db.model.impl.YhteystietoImpl" table="yhteystieto">
+		<cache usage="read-write" />
+		<id name="yhteystieto_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="sahkoposti" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="affiliaatio" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="puhelin" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="titteli" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="etunimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sukunimi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="URL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kuvaus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

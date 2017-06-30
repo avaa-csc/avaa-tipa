@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="fi.csc.avaa.tupa.db.service.AvainsanaLocalService" class="fi.csc.avaa.tupa.db.service.impl.AvainsanaLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.AvainsanaPersistence" class="fi.csc.avaa.tupa.db.service.persistence.AvainsanaPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.IdentifierLocalService" class="fi.csc.avaa.tupa.db.service.impl.IdentifierLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.IdentifierPersistence" class="fi.csc.avaa.tupa.db.service.persistence.IdentifierPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.InfraLocalService" class="fi.csc.avaa.tupa.db.service.impl.InfraLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.InfraPersistence" class="fi.csc.avaa.tupa.db.service.persistence.InfraPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Infra_AvainsanatLocalService" class="fi.csc.avaa.tupa.db.service.impl.Infra_AvainsanatLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Infra_AvainsanatPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Infra_AvainsanatPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Infra_IdentifierLocalService" class="fi.csc.avaa.tupa.db.service.impl.Infra_IdentifierLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Infra_IdentifierPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Infra_IdentifierPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Infra_PalvelutLocalService" class="fi.csc.avaa.tupa.db.service.impl.Infra_PalvelutLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Infra_PalvelutPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Infra_PalvelutPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Infra_VastuuorganisaatiotLocalService" class="fi.csc.avaa.tupa.db.service.impl.Infra_VastuuorganisaatiotLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Infra_VastuuorganisaatiotPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Infra_VastuuorganisaatiotPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Infra_YhteystiedotLocalService" class="fi.csc.avaa.tupa.db.service.impl.Infra_YhteystiedotLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Infra_YhteystiedotPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Infra_YhteystiedotPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.KayttoehtoLocalService" class="fi.csc.avaa.tupa.db.service.impl.KayttoehtoLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.KayttoehtoPersistence" class="fi.csc.avaa.tupa.db.service.persistence.KayttoehtoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.OrganisaatioLocalService" class="fi.csc.avaa.tupa.db.service.impl.OrganisaatioLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.OrganisaatioPersistence" class="fi.csc.avaa.tupa.db.service.persistence.OrganisaatioPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.PalveluLocalService" class="fi.csc.avaa.tupa.db.service.impl.PalveluLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.PalveluPersistence" class="fi.csc.avaa.tupa.db.service.persistence.PalveluPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.Palvelu_PalvelutyypitLocalService" class="fi.csc.avaa.tupa.db.service.impl.Palvelu_PalvelutyypitLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.Palvelu_PalvelutyypitPersistence" class="fi.csc.avaa.tupa.db.service.persistence.Palvelu_PalvelutyypitPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.PalvelutyyppiLocalService" class="fi.csc.avaa.tupa.db.service.impl.PalvelutyyppiLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.PalvelutyyppiPersistence" class="fi.csc.avaa.tupa.db.service.persistence.PalvelutyyppiPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.SeliteLocalService" class="fi.csc.avaa.tupa.db.service.impl.SeliteLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.SelitePersistence" class="fi.csc.avaa.tupa.db.service.persistence.SelitePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+	<bean id="fi.csc.avaa.tupa.db.service.TpAPILocalService" class="fi.csc.avaa.tupa.db.service.impl.TpAPILocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpAPIService" class="fi.csc.avaa.tupa.db.service.impl.TpAPIServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.TpAPIPersistence" class="fi.csc.avaa.tupa.db.service.persistence.TpAPIPersistenceImpl" parent="basePersistence" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpContactLocalService" class="fi.csc.avaa.tupa.db.service.impl.TpContactLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpContactService" class="fi.csc.avaa.tupa.db.service.impl.TpContactServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.TpContactPersistence" class="fi.csc.avaa.tupa.db.service.persistence.TpContactPersistenceImpl" parent="basePersistence" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpInfrastructureLocalService" class="fi.csc.avaa.tupa.db.service.impl.TpInfrastructureLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpInfrastructureService" class="fi.csc.avaa.tupa.db.service.impl.TpInfrastructureServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.TpInfrastructurePersistence" class="fi.csc.avaa.tupa.db.service.persistence.TpInfrastructurePersistenceImpl" parent="basePersistence" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpOrganisationLocalService" class="fi.csc.avaa.tupa.db.service.impl.TpOrganisationLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpOrganisationService" class="fi.csc.avaa.tupa.db.service.impl.TpOrganisationServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.TpOrganisationPersistence" class="fi.csc.avaa.tupa.db.service.persistence.TpOrganisationPersistenceImpl" parent="basePersistence" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpServizeLocalService" class="fi.csc.avaa.tupa.db.service.impl.TpServizeLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.TpServizeService" class="fi.csc.avaa.tupa.db.service.impl.TpServizeServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.TpServizePersistence" class="fi.csc.avaa.tupa.db.service.persistence.TpServizePersistenceImpl" parent="basePersistence" />
+	<bean id="fi.csc.avaa.tupa.db.service.YhteystietoLocalService" class="fi.csc.avaa.tupa.db.service.impl.YhteystietoLocalServiceImpl" />
+	<bean id="fi.csc.avaa.tupa.db.service.persistence.YhteystietoPersistence" class="fi.csc.avaa.tupa.db.service.persistence.YhteystietoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tupa" />
+		<property name="sessionFactory" ref="tupaSessionFactory" />
+	</bean>
+</beans>

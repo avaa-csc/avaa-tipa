@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="fi.csc.avaa.tupa.db.model.Avainsana">
+		<field name="avainsana_id" type="int" />
+		<field name="avainsana" type="String" />
+		<field name="keyword" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Identifier">
+		<field name="identifier_type" type="int" />
+		<field name="identifier_name" type="String" />
+		<field name="identifier_description_translation_key" type="String" />
+		<field name="resolution_url" type="String" />
+		<field name="definition_url" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra">
+		<field name="infra_id" type="int" />
+		<field name="ISNI" type="String" />
+		<field name="aktiivinen" type="boolean" />
+		<field name="valmistelu_aloitusvuosi" type="int" />
+		<field name="rakennus_aloitusvuosi" type="int" />
+		<field name="toiminta_aloitusvuosi" type="int" />
+		<field name="toiminta_lopetusvuosi" type="int" />
+		<field name="nimi" type="String" />
+		<field name="name" type="String" />
+		<field name="lyhenne" type="String" />
+		<field name="acronym" type="String" />
+		<field name="edellinen_infra" type="int" />
+		<field name="kuvaus" type="String" />
+		<field name="description" type="String" />
+		<field name="logo_url" type="String" />
+		<field name="image_url" type="String" />
+		<field name="api_date" type="Date" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra_Avainsanat">
+		<field name="infra_id" type="int" />
+		<field name="avainsana_id" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra_Identifier">
+		<field name="identifier_type" type="int" />
+		<field name="infra_id" type="int" />
+		<field name="identifier_value" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra_Palvelut">
+		<field name="infra_id" type="int" />
+		<field name="palvelu_id" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra_Vastuuorganisaatiot">
+		<field name="infra_id" type="int" />
+		<field name="organisaatio_id" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Infra_Yhteystiedot">
+		<field name="infra_id" type="int" />
+		<field name="yhteystieto_id" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Kayttoehto">
+		<field name="infra_id" type="int" />
+		<field name="saavutettavuus" type="int" />
+		<field name="anonymiteetti" type="int" />
+		<field name="maksullisuus" type="int" />
+		<field name="tulosten_julkaisuvelvoite" type="int" />
+		<field name="tuotoksien_julkaisuvelvoite" type="int" />
+		<field name="osaamisen_avoimuus" type="int" />
+		<field name="seurantatyokalut" type="int" />
+		<field name="tulosten_lisensointi" type="int" />
+		<field name="URLfi" type="String" />
+		<field name="URLen" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Organisaatio">
+		<field name="organisaatio_id" type="int" />
+		<field name="nimi" type="String" />
+		<field name="name" type="String" />
+		<field name="maa" type="String" />
+		<field name="ISNI" type="String" />
+		<field name="crmid" type="String" />
+		<field name="emo_organisaatio" type="int" />
+		<field name="kv_isanta" type="boolean" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Palvelu">
+		<field name="palvelu_id" type="int" />
+		<field name="nimi" type="String" />
+		<field name="name" type="String" />
+		<field name="kuvaus" type="String" />
+		<field name="description" type="String" />
+		<field name="URLen" type="String" />
+		<field name="URLfi" type="String" />
+		<field name="paikkatyyppi" type="int" />
+		<field name="katuosoite" type="String" />
+		<field name="kaupunki" type="String" />
+		<field name="lat" type="double" />
+		<field name="lon" type="double" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Palvelu_Palvelutyypit">
+		<field name="palvelu_id" type="int" />
+		<field name="palvelutyyppi_id" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Palvelutyyppi">
+		<field name="palvelutyyppi_id" type="int" />
+		<field name="tyyppi" type="int" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Selite">
+		<field name="selite_id" type="int" />
+		<field name="nimi" type="String" />
+		<field name="name" type="String" />
+		<field name="kuvaus" type="String" />
+		<field name="description" type="String" />
+		<field name="classificator" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.TpAPI">
+		<field name="methodsDescription" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.TpContact">
+		<field name="id" type="int" />
+		<field name="email" type="String" />
+		<field name="phone" type="String" />
+		<field name="title" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="url" type="String" />
+		<field name="description_EN" type="String" />
+		<field name="description_FI" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.TpInfrastructure">
+		<field name="id" type="int" />
+		<field name="urn" type="String" />
+		<field name="name_EN" type="String" />
+		<field name="name_FI" type="String" />
+		<field name="acronym_EN" type="String" />
+		<field name="acronym_FI" type="String" />
+		<field name="description_EN" type="String" />
+		<field name="description_FI" type="String" />
+		<field name="active" type="boolean" />
+		<field name="preparationsStarted" type="int" />
+		<field name="buildingStarted" type="int" />
+		<field name="operationsStarted" type="int" />
+		<field name="operationsFinished" type="int" />
+		<field name="formerIds" type="String" />
+		<field name="formerUrns" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.TpOrganisation">
+		<field name="id" type="int" />
+		<field name="name_EN" type="String" />
+		<field name="name_FI" type="String" />
+		<field name="isni" type="String" />
+		<field name="motherOrganisationsIds" type="int" />
+		<field name="country" type="String" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.TpServize">
+		<field name="id" type="int" />
+		<field name="name_EN" type="String" />
+		<field name="name_FI" type="String" />
+		<field name="description_EN" type="String" />
+		<field name="description_FI" type="String" />
+		<field name="url" type="String" />
+		<field name="address" type="String" />
+		<field name="city" type="String" />
+		<field name="lat" type="double" />
+		<field name="lon" type="double" />
+	</model>
+	<model name="fi.csc.avaa.tupa.db.model.Yhteystieto">
+		<field name="yhteystieto_id" type="int" />
+		<field name="sahkoposti" type="String" />
+		<field name="affiliaatio" type="int" />
+		<field name="puhelin" type="String" />
+		<field name="titteli" type="String" />
+		<field name="etunimi" type="String" />
+		<field name="sukunimi" type="String" />
+		<field name="URL" type="String" />
+		<field name="kuvaus" type="String" />
+		<field name="description" type="String" />
+	</model>
+</model-hints>
